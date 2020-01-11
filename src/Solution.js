@@ -1,6 +1,6 @@
 class Solution {
   constructor(nodes = []) {
-    this.value = 0;
+    this.value = -1;
     this.nodes = nodes;
   }
   generateRandomPath(nodes_all) {
@@ -29,7 +29,7 @@ class Solution {
     this.nodes = nodes;
   }
   getValue() {
-    if (this.value == 0) {
+    if (this.value == -1) {
       console.log("wartośc nie ustawiona");
     }
     return this.value;
