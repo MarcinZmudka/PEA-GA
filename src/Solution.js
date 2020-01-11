@@ -3,7 +3,7 @@ class Solution {
     this.value = 0;
     this.nodes = nodes;
   }
-  generate_random_path(nodes_all) {
+  generateRandomPath(nodes_all) {
     const length = nodes_all.length;
     let left_numbers = Array(length)
       .fill(null)
@@ -22,19 +22,19 @@ class Solution {
       );
     }
   }
-  get_nodes() {
+  getNodes() {
     return this.nodes;
   }
-  set_nodes(nodes) {
+  setNodes(nodes) {
     this.nodes = nodes;
   }
-  get_value() {
+  getValue() {
     if (this.value == 0) {
       console.log("wartośc nie ustawiona");
     }
     return this.value;
   }
-  set_value(value) {
+  setValue(value) {
     this.value = value;
   }
 }

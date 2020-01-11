@@ -83,43 +83,7 @@ function getNeighebers() {
   read("Podaj liczbe sasiadow: ", number => (neighbers = number));
 }
 function TabuSearchStart() {
-  // if (!nodesNotNull()) {
-  //   return;
-  // }
-  // const solution = new Solution();
-  // solution.generate_random_path(nodes);
-  // const counter = new Counter(nodes);
-  // counter.count_value_of_solution(solution);
-  // const tabu_search = new Tabu_Search(
-  //   iteration,
-  //   cadention,
-  //   neighbers,
-  //   nodes,
-  //   solution
-  // );
-  // tabu_search.start();
-  // console.log(`\nWartosc ściezki ${tabu_search.best_value}`);
-  // console.log(`Sciezka: ${tabu_search.best_solution.get_nodes()}\n`); "tsp_10", "br17", "ftv33_1",, "ftv56_1", "ftv65_1" 
-  const files = ["ftv65_1"];
-      for (let fil = 0; fil < 1; fil++) {
-        let summary= 0;
-        let time = 0;
-        const timer = new Timer();
-        const nodes = importer(files[fil]);
-        for (let i = 0; i < 5; i++) {
-            timer.init();
-          const solution = new Solution();
-          solution.generate_random_path(nodes);
-          const counter = new Counter(nodes);
-          counter.count_value_of_solution(solution);
-
-          const tabu_search = new Tabu_Search(iteration, cadention, neighbers, nodes, solution);
-          tabu_search.start();
-          summary += tabu_search.best_value;
-          time += timer.submit();
-        }
-        console.log(`${iteration}, ${cadention}, ${neighbers}, ${files[fil]}, ${summary}, ${time}`);
-      }
+  
 }
 function nodesNotNull() {
   //funckja sprawdzjąca czy plik z danymi zostal wczytany
