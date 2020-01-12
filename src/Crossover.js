@@ -32,7 +32,6 @@ class Crossover {
            return value;
         };
     });
-    console.log("range",nodesOne, range);
     return range;
   }
   makeSwapArray(rangeOne, rangeTwo) {

@@ -4,6 +4,7 @@ import Population from "./Population";
 import importer from "./importer";
 import Counter from "./Counter";
 import Crossover from "./Crossover";
+import Mutation from "./Mutation";
 
 // import menu from "./menu";
 // import importer from "./importer";
@@ -14,7 +15,10 @@ const nodes = importer("tsp_6_2");
 const solutionOne = new Solution();
 solutionOne.generateRandomPath(nodes);
 
-const solutionTwo = new Solution();
-solutionTwo.generateRandomPath(nodes);
-const crossover = new Crossover();
-crossover.cross(solutionOne, solutionTwo);
+// const solutionTwo = new Solution();
+// solutionTwo.generateRandomPath(nodes);
+// const crossover = new Crossover();
+// crossover.cross(solutionOne, solutionTwo);
+const mutation = new Mutation();
+console.log(solutionOne.getNodes());
+mutation.insertion(solutionOne);
