@@ -1,14 +1,15 @@
 import Solution from "./Solution";
 
 class Population{
-    constructor(sizeOfPopulation){
+    constructor(sizeOfPopulation, nodes){
         this.size = sizeOfPopulation;
+        this.nodes = nodes;
     }
-    makeRandomPopulation(nodes){
+    makeRandomPopulation(){
         const population = [];
         for(let i =0; i < this.size; i++){
             const solution = new Solution();
-            solution.generateRandomPath(nodes);
+            solution.generateRandomPath(this.nodes);
             population.push(solution);
         }
         return population;

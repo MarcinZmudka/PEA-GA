@@ -5,15 +5,14 @@ class Mutation {
     let indexOne = Math.floor(Math.random() * size);
     let indexTwo = Math.floor(Math.random() * size);
     if (indexOne == indexTwo) {
-      this.countIndexes(size);
+      this.countIndex(size);
       return;
     }
     this.indexOne = indexOne;
     this.indexTwo = indexTwo;
   }
-  insertion(solution) {
+  mutate(solution) {
     const nodes = solution.getNodes();
-    console.log(nodes);
     this.countIndex(nodes.length);
     const choosenCity = nodes[this.indexOne]; 
     const arrayWithoutChoosenCity = nodes.filter(value => value !== choosenCity);
@@ -26,7 +25,6 @@ class Mutation {
         newArray.push(arrayWithoutChoosenCity[i]);
     }
     solution.setNodes(newArray);
-    console.log(this.indexOne, this.indexTwo,newArray);
   }
 }
 export default Mutation;

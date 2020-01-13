@@ -28,7 +28,7 @@ class Mutation {
         });
         return range;
       }
-    inversion(solution){
+    mutate(solution){
         const nodes = solution.getNodes();
         this.countIndexes(nodes.length);
         const range = this.getRangeFromSolution(solution);

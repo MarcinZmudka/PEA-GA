@@ -1,8 +1,7 @@
 class Selector {
-  constructor(sizeOfBest) {
+  chooseTheBestSolutions(population, sizeOfBest) {
+    console.log(sizeOfBest);
     this.size = sizeOfBest;
-  }
-  chooseTheBestSolutions(population) {
     let newBest = [];
     population.map(solution => {
       if (newBest.length < this.size) {
@@ -67,6 +66,32 @@ class Selector {
       newArray.push(array[i]);
     }
     return newArray;
+  }
+  choose(number, population) {
+    //wybieramy number rozwiązań z populacji
+    const newPopulation = [];
+    for (let i = 0; i < population.length; i++) {
+      const choosenRoutes = [];
+      for (let j = 0; j < number; j++) {
+        const index = this.drawNumber(population.length);
+        choosenRoutes.push(population[index]);
+      }
+      const bestOne = this.chooseBestOne(choosenRoutes);
+      newPopulation.push(bestOne);
+    }
+    return newPopulation;
+  }
+  drawNumber(size) {
+    //losujemy osobnika z populacji
+    return Math.floor(Math.random() * size);
+  }
+  chooseBestOne(array) {
+    //wybieramy najlepszego osobnika
+    let best = array[0];
+    array.map(item => {
+      if (item.getValue() > best.getValue()) best = item;
+    });
+    return best;
   }
 }
 export default Selector;

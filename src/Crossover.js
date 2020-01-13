@@ -1,9 +1,9 @@
 import Solution from "./Solution";
+import Counter from "./Counter";
 
 class Crossover {
-  constructor(propability) {
-    this.props = propability;
-    this.countIndexes(6);
+  constructor(length) {
+    this.countIndexes(length);
   }
   countIndexes(size) {
     //wyznacza indeksy
@@ -77,7 +77,6 @@ class Crossover {
     if (swapArray.length == 0) swapArray = this.swapArray;
     let newCity = null;
     let indexOfArray = 0;
-    // console.log("@console", swapArray);
     swapArray.map((array, index) => {
       if (array.includes(city)) {
         const indexOfCity = array.indexOf(city);
@@ -93,17 +92,13 @@ class Crossover {
       const newSwap = swapArray.filter((value, index) => index != indexOfArray);
       return this.swapIncompatibleCities(newCity, range, newSwap);
     }
-    // console.log(city, newCity);
     return newCity;
   }
   cross(solutionOne, solutionTwo) {
-      console.log(solutionOne.getNodes());
-      console.log(solutionTwo.getNodes());
-      console.log(this.indexOne, this.indexTwo);
     const [rangeOne, rangeTwo] = this.getRanges(solutionOne, solutionTwo);
     const newSolutionOne = this.swapRanges(solutionOne, rangeTwo);
     const newSolutionTwo = this.swapRanges(solutionTwo, rangeOne);
-    console.log(newSolutionOne.getNodes(), newSolutionTwo.getNodes());
+    return [newSolutionOne, newSolutionTwo];
   }
 }
 export default Crossover;
